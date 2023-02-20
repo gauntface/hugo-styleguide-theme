@@ -1,0 +1,35 @@
+{{- define "styleguide-load-static-css-file" -}}
+  {{- $sections := split $.path $.spliton -}}
+  {{- $path := index $sections 1 -}}
+
+  {{- if strings.HasSuffix $path $.suffix  -}}
+    <link rel="stylesheet" href="{{- $path -}}" class="n-hopin-styleguide-js-load-static-css">
+  {{- end -}}
+{{- end -}}
+
+{{- define "styleguide-load-static-css" -}}
+  {{- range (readDir $.dir) -}}
+    {{- $path := printf "%v/%v" $.dir .Name -}}
+    {{- if .IsDir -}}
+      {{- if not (eq $path "/themes/styleguide") -}}
+        {{- template "styleguide-load-static-css" (dict "suffix" $.suffix "dir" $path) -}}
+      {{- end -}}
+    {{- else -}}
+      <!-- For each static directory we want to strip anything before static -->
+      {{ if in $path "static/" }}
+        {{- template "styleguide-load-static-css-file" (dict "suffix" $.suffix "path" $path "spliton" "static") -}}
+      {{ else if in $path "assets/" }}
+      {{- template "styleguide-load-static-css-file" (dict "suffix" $.suffix "path" $path "spliton" "assets") -}}
+      {{ end }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- range (readDir "/") -}}
+  {{- $name := .Name -}}
+  {{- range (slice "themes" "static" "assets") -}}
+    {{- if eq $name . -}}
+      {{- template "styleguide-load-static-css" (dict "suffix" $.Params.suffix "dir" .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

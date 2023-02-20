@@ -1,0 +1,33 @@
+.n-hopin-styleguide-c-styleguide-card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.n-hopin-styleguide-c-styleguide-card--link {
+	text-decoration: none;
+}
+
+.n-hopin-styleguide-c-styleguide-card--content {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: var(--hopin-home-item-height-mobile, 150px);
+	box-sizing: border-box;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: var(--hopin-home-item-border-width, 1px);
+	border-color: var(--hopin-home-item-border-color, #c4c4c4);
+	box-shadow: 0 3px 4px 0 var(--hopin-home-item-shadow-color, #c4c4c4);
+	background-color: var(--hopin-home-item-background, #fff);
+	color: var(--hopin-home-item-outline, #454545);
+	font-weight: bold;
+	font-size: var(--hopin-home-item-font-size, 3em);
+}
+
+.n-hopin-styleguide-c-styleguide-card--footer {
+	font-weight: bold;
+	font-size: var(--hopin-home-item-font-size, 1.4em);
+}

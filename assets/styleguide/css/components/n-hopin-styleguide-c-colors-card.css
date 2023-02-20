@@ -1,0 +1,17 @@
+/* This sets the color for the colors icon show on the
+home page */
+.n-hopin-styleguide-c-colors-card--right-circle {
+	fill: var(--hopin-home-item-color-2, #00aeef);
+}
+
+.n-hopin-styleguide-c-colors-card--left-circle {
+	fill: var(--hopin-home-item-color-3, #ec008c);
+}
+
+.n-hopin-styleguide-c-colors-card--top-circle {
+	fill: var(--hopin-home-item-color-1, #fff200);
+}
+
+.n-hopin-styleguide-c-colors-card--outline {
+	stroke: var(--hopin-home-item-outline, #454545);
+}

@@ -1,0 +1,24 @@
+{{- define "styleguide-render-partial" -}}
+    {{- $origComponent := printf "%v/%v%v" $.path $.fileName $.fileExt -}}
+    {{- $renderComponent := $origComponent -}}
+
+    {{- $styleguideSpecific := printf "%v/%v.styleguide%v" $.path $.fileName $.fileExt -}}
+
+    {{- if (fileExists $styleguideSpecific) -}}
+        {{- $renderComponent = $styleguideSpecific -}}
+    {{- end -}}
+
+    {{- $relPath := (split $renderComponent "/layouts/partials/") -}}
+    {{- $relPath = (last (sub (len $relPath) 1) $relPath) -}}
+    {{- $partialPath := "" -}}
+    {{ range $index, $part := $relPath }}
+
+        {{if eq $index 0}}
+        {{ $partialPath = $part }}
+        {{ else }}
+        {{ $partialPath = printf "%s/%s" $partialPath $part }}
+        {{ end }}
+    {{ end }}
+
+    {{- partial $partialPath $.ctx.Page -}}
+{{- end -}}

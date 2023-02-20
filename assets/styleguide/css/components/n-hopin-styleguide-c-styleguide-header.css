@@ -1,0 +1,56 @@
+.n-hopin-styleguide-c-styleguide-header {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: var(--hopin-background-color, #dcdde1);
+}
+
+.n-hopin-styleguide-c-styleguide-header__btn {
+	padding: var(--hopin-header-logo-hori-padding, 16px);
+}
+
+.n-hopin-styleguide-c-styleguide-header__btn svg {
+	fill: var(--hopin-header-menu-color, black);
+}
+
+.n-hopin-styleguide-c-styleguide-header__btn-label {
+	user-select: none;
+}
+
+.n-hopin-styleguide-c-styleguide-header__logo {
+	display: var(--hopin-header-logo-display, none);
+	width: var(--hopin-header-logo-size, 70px);
+	height: var(--hopin-header-logo-size, 70px);
+	background-image: var(--hopin-header-logo-bg-img, none);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	margin: var(--hopin-header-logo-vert-padding, 15px)
+		var(--hopin-header-logo-hori-padding, 16px);
+}
+
+.n-hopin-styleguide-c-styleguide-header__title {
+	color: var(--hopin-header-menu-color, black);
+	font-weight: var(--hopin-header-font-weight, normal);
+	font-size: var(--hopin-header-font-size, 24px);
+	flex: 1;
+}
+
+.n-hopin-styleguide-c-styleguide-header__title a {
+	color: inherit;
+}
+
+.n-hopin-styleguide-c-styleguide-header__link {
+	text-decoration: none;
+}
+
+@media (min-width: 960px) {
+	.n-hopin-styleguide-c-styleguide-header {
+		padding: 0 var(--hopin-main-content-hori-padding, 48px);
+	}
+
+	.n-hopin-styleguide-c-styleguide-header__menu {
+		display: none;
+	}
+}

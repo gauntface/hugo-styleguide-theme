@@ -1,0 +1,9 @@
+.n-hopin-styleguide-l-list-grid {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(var(--hopin-swatch-min-width, 200px), 1fr)
+	);
+	grid-gap: var(--hopin-home-item-vert-gap, 40px)
+		var(--hopin-home-item-hori-gap, 80px);
+}
